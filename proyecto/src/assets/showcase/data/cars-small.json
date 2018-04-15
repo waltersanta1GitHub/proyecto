@@ -1,0 +1,8 @@
+{
+    "data": [
+        {"cantidad": 2, "unidad": "Cajas", "estado": "Optimo", "embalaje": "Cajas 2X2","estadoembalaje":"Bueno"},
+        {"cantidad": 1, "unidad": "Litro", "estado": "Optimo", "embalaje": "Galon 26","estadoembalaje":"Malo"},
+        {"cantidad": 1, "unidad": "Kilo", "estado": "Optimo", "embalaje": "Estiba Mediana","estadoembalaje":"Dañando"}
+          
+    ]
+}

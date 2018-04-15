@@ -1,0 +1,52 @@
+<mat-drawer-container class="barra-container" autosize>
+    <mat-drawer #drawer class="barra-sidenav" mode="side">
+            <div class="logo">
+                    <a class="simple-text">
+                        <div class="logo-img">
+                            <img src="/assets/img/logo.png" />
+                        </div>
+                       <label class="barra-label">QUIMIRESPEL</label>
+                    </a>
+                </div>
+        <ul class="nav barra-ul">
+
+            <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+                <button class="barra-button"   (click)="redirect(menuItem.path)" mat-raised-button>
+                   <p>{{menuItem.title}}</p>              
+                </button>
+            </li>
+
+        </ul>
+    </mat-drawer>
+    <div class="barra-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+                >>>
+        </button> 
+        <mat-toolbar>   
+             <span>QUIMIRESPEL</span>        
+            <span class="barra-fill-remaining-space " ></span>
+            <span>
+                <button mat-button [matMenuTriggerFor]="notificacionbtn"> 
+                    NOTIFICACIONES
+                </button>
+                <mat-menu #notificacionbtn="matMenu">
+                        <button mat-menu-item>Notificacion 1</button>
+                        <button mat-menu-item>Notificacion 2</button>
+                 </mat-menu>
+            </span>
+            <span>
+                    <button mat-button [matMenuTriggerFor]="menubtn">PERFIL</button>
+                    <mat-menu #menubtn="matMenu">
+                            <button mat-menu-item>CONFIGURACION</button>
+                            <button mat-menu-item>SALIR</button>
+                     </mat-menu>
+            </span>
+        </mat-toolbar> 
+    </div>   
+    
+    <div class="content">
+            <div class="main-content">             
+             <dashboard-cmp></dashboard-cmp>
+            </div>           
+     </div>
+</mat-drawer-container>
